@@ -3,17 +3,17 @@
 Dépot des documents et travaux du groupe de travail CNIG concernant la mise à jour du Standard "Dessertes pour le transport de bois"
 
 
-## Présentation 
+## Contexte du standard
 
 Dans le but de faciliter l’organisation du transport des bois du lieu de stockage en sortie de parcelle jusqu’aux industries de transformation, le MASA, le MTES et les organismes en charge des problématiques de transport et de transformation des bois ont souhaité la création d’un **standard de données portant sur les dessertes forestières**.
 
-L’objectif était de définir un modèle de données répondant aux besoins de la filière en termes de recensement et de caractérisation des voies praticables pour le transport de bois, des aménagements présents et des points noirs pour la circulation.L’objectif était de faciliter la mobilisation du bois en forêt du lieu de stockage en sortie de parcelle jusqu’aux industries de transformation.
+L’objectif était alors de définir un modèle de données répondant aux besoins de la filière en termes de recensement et de caractérisation des voies praticables pour le transport de bois, des aménagements présents et des points noirs pour la circulation.L’objectif était de faciliter la mobilisation du bois en forêt du lieu de stockage en sortie de parcelle jusqu’aux industries de transformation.
 
 Avec la parution de la **Loi Incendie**, le standard "Dessertes pour le transports de bois" est en cours de mise à jour afin d’y intégrer la thématique DFCI (Défense des Forêts Contre les Incendies).
 
 La loi Incendie (n° 2023-580 du 10/07/2023) vise à renforcer la prévention et la lutte contre l’intensification et l’extension du risque incendie. Elle exige que les informations relatives à la localisation et aux caractéristiques des dessertes forestières, des points d’eau et des pistes utilisables à des fins de défense contre l’incendie fassent l’objet d’une mise à jour tous les cinq ans pour chaque département. Elles doivent être mises à disposition gratuitement et librement sous une forme dématérialisée, sur un portail national commun, au plus tard le 1er janvier 2026.
 
-C’est pourquoi le GT Dessertes pour le transports de bois est relancé afin de réviser le standard validé en 2019.
+C’est pourquoi le GT Dessertes pour le transports de bois est relancé en 2025 afin de réviser le standard validé en 2019.
 
 Il oeuvre sous mandat de la **Commission Standards du Conseil National de l'Information Géolocalisée** (CNIG). Le **mandat du Groupe de Travail** peut être consulté [ici](https://github.com/cnigfr/schema-dessertes-transport-de-bois/blob/master/suivi/2025-02-06_1ere_reunion_pleniere/Projet%20Mandat%20CNIG_GT%20Dessertes.docx). La page dédiée de ce groupe sur le **site du CNIG** est accessible [ici](https://cnig.gouv.fr/gt-dessertes-pour-les-transports-de-bois-a18535.html). *Cette dernière est mise à jour moins rapidement que ce dépôt GitHub.* 
 
