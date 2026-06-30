@@ -1,0 +1,192 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "ressource-en-eau",
+  "title": "Ressource en eau",
+  "description": "Ressources en eau en forêt liées aux besoins DECI/DFCI, conformes au standard CNIG Dessertes en forêt v2.0",
+  "countryCode": "FR",
+  "homepage": "https://cnig.gouv.fr/gt-dessertes-pour-les-transports-de-bois-a18535.html",
+  "path": "https://schema.data.gouv.fr/cnigfr/schema-desserte-transport-bois/latest/ressource-en-eau.json",
+  "created": "2026-06-18",
+  "version": "2.0.0",
+  "fields": [
+    {
+      "name": "identifiant",
+      "title": "Identifiant pour la diffusion",
+      "description": "Identifiant unique de l'objet",
+      "type": "string",
+      "example": "RESS_EAU0000002008897356",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "code_insee_commune",
+      "title": "Code INSEE de la commune",
+      "description": "Code INSEE de la commune où se situe la ressource en eau",
+      "type": "string",
+      "pattern": "^[0-9AB]{5}$",
+      "example": "27098",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "numero_pei",
+      "title": "Numéro ou référence du PEI",
+      "description": "Numéro ou référence du PEI validé en interservices",
+      "type": "string",
+      "example": "SDIS69-PI-00342",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "numero_gestionnaire",
+      "title": "Numéro ou référence pour le gestionnaire",
+      "description": "Numéro ou référence interne du PEI pour le gestionnaire",
+      "type": "string",
+      "example": "83069_PI_0254"
+    },
+    {
+      "name": "nom_gestionnaire",
+      "title": "Nom du gestionnaire",
+      "description": "Nom du gestionnaire du PEI (information anonymisée)",
+      "type": "string",
+      "example": "Mairie de Saint-Martin-de-Crau"
+    },
+    {
+      "name": "numero_terrain",
+      "title": "Numéro ou référence terrain",
+      "description": "Numéro ou référence visible sur le terrain",
+      "type": "string",
+      "example": "PI-13-0042"
+    },
+    {
+      "name": "type_pei",
+      "title": "Type de point d'eau",
+      "description": "Type de point d'eau incendie",
+      "type": "string",
+      "enum": [
+        "Poteau d'incendie",
+        "Bouche d'incendie",
+        "Point d'aspiration aménagé",
+        "Citerne aérienne ou enterrée",
+        "Autre"
+      ],
+      "example": "Point d'aspiration aménagé",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "type_pei_precis",
+      "title": "Précision sur le type de point d'eau",
+      "description": "Précision sur le type de point d'eau incendie",
+      "type": "string",
+      "enum": [
+        "Point d'eau naturel ou artificiel",
+        "Point de puisage",
+        "Réseau d'irrigation agricole",
+        "Autre réseau d'eau sous pression",
+        "Citerne enterrée",
+        "Citerne aérienne",
+        "Bâche à eau",
+        "Plan d'eau",
+        "Piscine",
+        "Puits",
+        "Cours d'eau",
+        "Forage DFCI",
+        "Forage agricole",
+        "Forage industriel",
+        "Autre dispositif"
+      ],
+      "example": "Bâche à eau"
+    },
+    {
+      "name": "statut_pei",
+      "title": "Statut du point d'eau",
+      "description": "Statut du point d'eau (public ou privé)",
+      "type": "string",
+      "enum": [
+		"Privé",
+		"Public"
+	  ],
+      "example": "Public"
+    },
+    {
+      "name": "pression_dynamique",
+      "title": "Pression dynamique",
+      "description": "Pression dynamique en bars au débit nominal",
+      "type": "number",
+      "example": "1"
+    },
+    {
+      "name": "pression_statique",
+      "title": "Pression statique",
+      "description": "Pression statique en bars",
+      "type": "number",
+      "example": "8.5"
+    },
+    {
+      "name": "debit",
+      "title": "Débit",
+      "description": "Débit mesuré en m3/h sous une pression de 1 bar",
+      "type": "number",
+      "example": "60"
+    },
+    {
+      "name": "volume",
+      "title": "Volume",
+      "description": "Capacité volumique utile en m3 (9999 si inépuisable)",
+      "type": "integer",
+      "example": "9999"
+    },
+    {
+      "name": "date_creation",
+      "title": "Date de création",
+      "description": "Date de saisie dans la base de données",
+      "type": "datetime",
+      "example": "2018-07-12T10:00:17",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "date_modification",
+      "title": "Date de modification",
+      "description": "Date de dernière modification",
+      "type": "datetime",
+      "example": "2018-07-12T10:00:17"
+    },
+    {
+      "name": "methode_acquisition",
+      "title": "Méthode d'acquisition planimétrique",
+      "description": "Méthode principale d'acquisition de la géométrie",
+      "type": "string",
+      "example": "GPS"
+    },
+    {
+      "name": "accessibilite_hbe",
+      "title": "Accessibilité HBE",
+      "description": "Accessibilité par hélicoptère bombardier d'eau",
+      "type": "string",
+      "enum": [
+		"Léger",
+		"Lourd",
+		"Non accessible"
+	  ],
+      "example": "Lourd"
+    },
+    {
+      "name": "persistance",
+      "title": "Persistance",
+      "description": "Degré de persistance de l'écoulement de l'eau",
+      "type": "string",
+      "enum": [
+		"Intermittent",
+		"Permanent"
+	  ],
+      "example": "Permanent"
+    }
+  ]
+}

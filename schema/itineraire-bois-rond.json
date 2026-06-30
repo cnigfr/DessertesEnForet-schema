@@ -1,0 +1,526 @@
+{
+  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
+  "name": "itineraire-bois-rond",
+  "title": "Itinéraire Bois Rond",
+  "description": "Itinéraires autorisés par arrêté préfectoral pour le transport de bois ronds. Cette classe hérite de tous les attributs de la classe TronconDeRoute et y ajoute des attributs spécifiques aux ITBR.",
+  "countryCode": "FR",
+  "homepage": "https://cnig.gouv.fr/gt-dessertes-pour-les-transports-de-bois-a18535.html",
+  "path": "https://schema.data.gouv.fr/cnigfr/schema-desserte-transport-bois/latest/itineraire-bois-rond.json",
+  "created": "2026-06-18",
+  "version": "2.0.0",
+  "fields": [
+    {
+      "name": "identifiant",
+      "title": "Identifiant pour la diffusion",
+      "description": "Identifiant unique de l'objet, qui sert principalement à sa diffusion",
+      "type": "string",
+      "example": "TRONROUT0000002008897357",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "code_insee_commune_droite",
+      "title": "Code INSEE de la commune à droite",
+      "description": "Numéro INSEE de la commune à droite du tronçon par rapport au sens de numérisation",
+      "type": "string",
+      "pattern": "^[0-9AB]{5}$",
+      "example": "2B004"
+    },
+    {
+      "name": "code_insee_commune_gauche",
+      "title": "Code INSEE de la commune à gauche",
+      "description": "Numéro INSEE de la commune à gauche du tronçon par rapport au sens de numérisation",
+      "type": "string",
+      "pattern": "^[0-9AB]{5}$",
+      "example": "27098"
+    },
+    {
+      "name": "numero_route",
+      "title": "Numéro de la route",
+      "description": "Numéro de route à laquelle appartient ce tronçon",
+      "type": "string",
+      "example": "D62"
+    },
+    {
+      "name": "nom_ban_voie_droite",
+      "title": "Nom BAN de la voie à droite",
+      "description": "Nom de la voie à droite, provenant de la BAN",
+      "type": "string",
+      "example": "Route de Senlis"
+    },
+    {
+      "name": "nom_ban_voie_gauche",
+      "title": "Nom BAN de la voie à gauche",
+      "description": "Nom de la voie à gauche, provenant de la BAN",
+      "type": "string",
+      "example": "Route de Senlis"
+    },
+    {
+      "name": "nom_usuel_voie_droite",
+      "title": "Nom usuel de la voie à droite",
+      "description": "Nom alternatif connu de la voie à droite lorsque celui-ci ne provient pas de la BAN",
+      "type": "string",
+      "example": "Route de Courbon"
+    },
+    {
+      "name": "nom_usuel_voie_gauche",
+      "title": "Nom usuel de la voie à gauche",
+      "description": "Nom alternatif connu de la voie à gauche lorsque celui-ci ne provient pas de la BAN",
+      "type": "string",
+      "example": "Montée des Bois"
+    },
+    {
+      "name": "gestionnaire",
+      "title": "Gestionnaire",
+      "description": "Le gestionnaire administratif de la route",
+      "type": "string",
+      "example": "Conseil départemental"
+    },
+    {
+      "name": "importance",
+      "title": "Importance",
+      "description": "Hiérarchisation du réseau routier selon l'importance pour le trafic",
+      "type": "string",
+      "enum": [
+		"1", 
+		"2",
+		"3",
+		"4",
+		"5",
+		"6"
+	  ],
+      "example": "3"
+    },
+    {
+      "name": "sens_circulation",
+      "title": "Sens de circulation",
+      "description": "Sens licite de circulation défini par rapport au sens de numérisation",
+      "type": "string",
+      "enum": [
+		"Double sens",
+		"Sens direct",
+		"Sens inverse",
+		"Sans objet"
+	  ],
+      "example": "Double sens",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "position_sol",
+      "title": "Position par rapport au sol",
+      "description": "Niveau de l'objet par rapport à la surface du sol",
+      "type": "string",
+      "enum": [
+		"-4",
+		"-3",
+		"-2",
+		"-1",
+		"0",
+		"1",
+		"2",
+		"3",
+		"4",
+		"Gué ou radier"
+	  ],
+      "example": "0",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "largeur_chaussee",
+      "title": "Largeur de la chaussée",
+      "description": "Largeur de la chaussée en mètres, d'accotement à accotement",
+      "type": "number",
+      "example": "7.0"
+    },
+    {
+      "name": "ptra_max",
+      "title": "Poids total roulant autorisé maximal",
+      "description": "PTRA maximal sur le tronçon en tonnes",
+      "type": "number",
+      "example": "44.00"
+    },
+    {
+      "name": "largeur_max_autorisee",
+      "title": "Largeur maximale autorisée",
+      "description": "Largeur maximale autorisée en mètres pour la circulation",
+      "type": "number",
+      "example": "2.55"
+    },
+    {
+      "name": "hauteur_max_autorisee",
+      "title": "Hauteur maximale autorisée",
+      "description": "Hauteur maximale autorisée en mètres pour la circulation",
+      "type": "number",
+      "example": "4.00"
+    },
+    {
+      "name": "longueur_max_autorisee",
+      "title": "Longueur maximale autorisée",
+      "description": "Longueur maximale autorisée en mètres pour la circulation",
+      "type": "number",
+      "example": "25.25"
+    },
+    {
+      "name": "praticabilite",
+      "title": "Praticabilité",
+      "description": "Praticabilité du tronçon en fonction des conditions météorologiques",
+      "type": "string",
+      "enum": [
+		"Tout temps",
+		"Temps sec"
+	  ],
+      "example": "Tout temps"
+    },
+    {
+      "name": "methode_acquisition",
+      "title": "Méthode d'acquisition planimétrique",
+      "description": "Méthode principale ayant permis d'acquérir la géométrie planimétrique",
+      "type": "string",
+      "example": "GPS",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "sources",
+      "title": "Sources",
+      "description": "Sources attestant l'existence de l'objet",
+      "type": "string",
+      "example": "DDT45"
+    },
+    {
+      "name": "date_modification",
+      "title": "Date de modification",
+      "description": "Date et heure de dernière modification",
+      "type": "datetime",
+      "example": "2024-03-15T14:30:00"
+    },
+    {
+      "name": "nature",
+      "title": "Nature",
+      "description": "Type de revêtement et praticabilité du tronçon",
+      "type": "string",
+      "enum": [
+        "Bac ou liaison maritime",
+        "Bretelle",
+        "Chemin",
+        "Escalier",
+        "Rond-point",
+        "Route empierrée",
+        "Route à 1 chaussée",
+        "Route à 2 chaussées",
+        "Sentier",
+        "Type autoroutier"
+      ],
+      "example": "Route à 1 chaussée",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "reseau_bois",
+      "title": "Réseau transport de bois",
+      "description": "Appartenance à un réseau de transport de bois. Pour les ITBR, la valeur doit être 'Itinéraire Bois Rond'",
+      "type": "string",
+      "enum": [
+		"Itinéraire Bois Rond"
+	  ],
+      "example": "Itinéraire Bois Rond",
+      "constraints": {
+        "required": true,
+      }
+    },
+    {
+      "name": "accessibilite_bois",
+      "title": "Accessibilité aux ensembles routiers de transport de bois",
+      "description": "Type de véhicule maximal pouvant emprunter la voie",
+      "type": "string",
+      "enum": [
+        "Semi-remorque",
+        "Camion remorque",
+        "Grumier sans timon",
+        "Grumier avec timon",
+        "Semi-remorque surbaissée",
+        "Semi-remorque à fond mouvant"
+      ],
+      "example": "Semi-remorque",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "reseau_dfci",
+      "title": "Réseau DFCI",
+      "description": "Type de voie au sens de la DFCI",
+      "type": "string",
+      "enum": [
+        "Voie DFCI",
+        "Route d'intérêt DFCI",
+        "Accès DFCI",
+        "Voie publique stratégique"
+      ],
+      "example": "Route d'intérêt DFCI"
+    },
+    {
+      "name": "gabarit_dfci",
+      "title": "Gabarit DFCI",
+      "description": "Type de véhicule DFCI pouvant emprunter le tronçon",
+      "type": "string",
+      "enum": [
+		"Poids super lourd",
+		"Poids lourd",
+		"Véhicule léger"
+	  ],
+      "example": "Poids lourd"
+    },
+    {
+      "name": "fosses_dfci",
+      "title": "Fossés DFCI",
+      "description": "Présence de fossés le long du tronçon",
+      "type": "string",
+      "enum": [
+        "Aucun",
+        "Fossé à droite",
+        "Fossé à gauche",
+        "Fossés à droite et à gauche"
+      ],
+      "example": "Aucun"
+    },
+    {
+      "name": "vitesse_moyenne_dfci",
+      "title": "Vitesse moyenne DFCI",
+      "description": "Vitesse moyenne du tronçon pour les acteurs DFCI en km/h",
+      "type": "integer",
+      "example": "30"
+    },
+    {
+      "name": "categorie_dfci",
+      "title": "Catégorie DFCI",
+      "description": "Classification des possibilités de circulation DFCI",
+      "type": "string",
+      "enum": [
+		"1re catégorie",
+		"2e catégorie",
+		"3e catégorie",
+		"Hors catégorie"
+	  ],
+      "example": "1re catégorie"
+    },
+    {
+      "name": "acces_vehicule_leger",
+      "title": "Accès véhicule léger",
+      "description": "Conditions d'accès des véhicules légers",
+      "type": "string",
+      "enum": [
+        "À péage",
+        "Libre",
+        "Physiquement impossible",
+        "Restreint aux ayants droit"
+      ],
+      "example": "Libre"
+    },
+    {
+      "name": "acces_pieton",
+      "title": "Accès piéton",
+      "description": "Restrictions de circulation pour les piétons",
+      "type": "string",
+      "enum": [
+        "À péage",
+        "Libre",
+        "Passage difficile",
+        "Restreint aux ayants droit"
+      ],
+      "example": "Libre"
+    },
+    {
+      "name": "autorisation_itbr",
+      "title": "Autorisation ITBR",
+      "description": "Type d'autorisation de circulation sur le tronçon ITBR défini par l'arrêté préfectoral",
+      "type": "string",
+      "enum": [
+        "Sans restriction",
+        "Transit",
+        "Desserte locale",
+        "Avec autorisation",
+        "Avec information",
+        "Interdiction"
+      ],
+      "example": "Sans restriction",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "raccordement_itbr",
+      "title": "Raccordement ITBR",
+      "description": "Modalité de raccordement possible à partir du tronçon ITBR. Obligatoire si autorisation_itbr différent de 'Interdiction'",
+      "type": "string",
+      "enum": [
+        "Sans restriction",
+        "Au plus court",
+        "4 km max",
+        "10 km max",
+        "15 km max",
+        "20 km max"
+      ],
+      "example": "10 km max"
+    },
+    {
+      "name": "raccordement_au_plus_court",
+      "title": "Raccordement au plus court",
+      "description": "Mention 'au plus court' pour les raccordements avec distance maximale. Obligatoire si raccordement_itbr contient 'km max'",
+      "type": "string",
+      "enum": [
+		"Oui",
+		"Non"
+	  ],
+      "example": "Oui"
+    },
+    {
+      "name": "autorisation_raccordement_itbr",
+      "title": "Autorisation de raccordement ITBR",
+      "description": "Autorisation nécessaire pour le raccordement depuis le tronçon ITBR",
+      "type": "string",
+      "enum": [
+        "Oui",
+        "Non",
+        "Selon configuration",
+        "Déclaration",
+        "Non concerné"
+      ],
+      "example": "Non",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "configuration_raccordement_itbr",
+      "title": "Configuration de raccordement ITBR",
+      "description": "Configuration nécessitant une autorisation pour emprunter les voies de raccordement. Obligatoire si autorisation_raccordement_itbr vaut 'Oui' ou 'Selon configuration'",
+      "type": "string",
+      "enum": [
+        "Tonnage > 44T à 5 essieux et > 48T à 6 essieux",
+        "Tonnage > 48 T à 6 essieux minimum",
+        "Tonnage > 52 T à 6 essieux minimum",
+        "Non concerné"
+      ],
+      "example": "Tonnage > 44T à 5 essieux et > 48T à 6 essieux"
+    },
+    {
+      "name": "equipement_raccordement_itbr",
+      "title": "Équipement de raccordement ITBR",
+      "description": "Équipement particulier nécessaire pour le raccordement depuis le tronçon ITBR",
+      "type": "string",
+      "enum": [
+		"5 essieux max",
+		"6 essieux max"
+	  ],
+      "example": "6 essieux max",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "ptra_max_5_essieux",
+      "title": "PTRA max ITBR 5 essieux",
+      "description": "Poids total roulant autorisé maximal en tonnes pour un ensemble routier de 5 essieux",
+      "type": "string",
+      "enum": [
+		"44",
+		"45",
+		"48"
+	  ],
+      "example": "44",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "ptra_max_6_essieux",
+      "title": "PTRA max ITBR 6 essieux",
+      "description": "Poids total roulant autorisé maximal en tonnes pour un ensemble routier de 6 essieux",
+      "type": "string",
+      "enum": [
+		"44",
+		"45",
+		"48",
+		"57"
+	  ],
+      "example": "57",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "interdiction_horaire",
+      "title": "Interdiction de circulation ITBR",
+      "description": "Interdiction de circulation lors de plages horaires sur le tronçon ITBR",
+      "type": "string",
+      "enum": [
+		"Non concerné",
+		"Plage horaire"
+	  ],
+      "example": "Non concerné",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "itbr_temporaire",
+      "title": "ITBR temporaire",
+      "description": "Caractère temporaire de l'autorisation d'itinéraire bois rond",
+      "type": "string",
+      "enum": [
+		"Oui",
+		"Non"
+	  ],
+      "example": "Non",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "debut_periode_itbr",
+      "title": "Début de la période ITBR",
+      "description": "Date de début du caractère temporaire. Obligatoire si itbr_temporaire vaut 'Oui'",
+      "type": "datetime",
+      "example": "2024-01-01T00:00:00"
+    },
+    {
+      "name": "fin_periode_itbr",
+      "title": "Fin de la période ITBR",
+      "description": "Date de fin du caractère temporaire. Obligatoire si itbr_temporaire vaut 'Oui'",
+      "type": "datetime",
+      "example": "2024-12-31T23:59:59"
+    },
+    {
+      "name": "arrete_a_bord",
+      "title": "Arrêté à bord",
+      "description": "Obligation d'avoir un exemplaire de l'arrêté préfectoral à bord du véhicule",
+      "type": "string",
+      "enum": [
+		"Oui",
+		"Non"
+	  ],
+      "example": "Oui",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "date_arrete",
+      "title": "Date de l'arrêté à bord",
+      "description": "Date de signature de l'arrêté préfectoral à bord",
+      "type": "date",
+      "example": "2024-03-15",
+      "constraints": {
+        "required": true
+      }
+    }
+  ]
+}

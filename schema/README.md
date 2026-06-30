@@ -1,69 +1,154 @@
-## :warning: Dossier contenant le modèle de schéma du CNIG :construction:
+# Schéma de données Dessertes en forêt : Transport de bois et DFCI
 
-Ce dossier est en construction et hébergera le futur schéma du standard. Les documents présents sont issus du modèle de standard du CNIG.
+Ce dépôt contient les schémas de données relatifs aux dessertes forestières pour le transport de bois et la Défense des Forêts Contre l'Incendie (DFCI), conformes au standard CNIG v2.0 publié en juin 2026.
 
-------------
+## Contexte
 
-# Modèle pour les dépôts CNIG de standards
+Ce standard permet de décrire :
+- Les **tronçons de route** en forêt utilisables pour le transport de bois et/ou la DFCI
+- Les **itinéraires bois ronds** (ITBR) autorisés par arrêté préfectoral
+- Les **équipements** (aires de retournement, places de dépôt, etc.)
+- Les **points de contrainte** (ponts, pentes fortes, obstacles, etc.)
+- Les **ressources en eau** mobilisables pour la lutte contre l'incendie
 
-Ce dépôt contient les fichiers nécessaires pour démarrer la création d'un dépôt pour un standard, il est conforme à ce qui est demandé pour un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
+## Cadre réglementaire
 
-## Utiliser ce template
+Ce standard s'inscrit dans le cadre de la **Loi Incendie n° 2023-580 du 10/07/2023** qui exige que les informations relatives aux dessertes forestières, points d'eau et pistes DFCI soient mises à disposition gratuitement et librement sous forme dématérialisée.
 
-- Si vous créez votre dépôt sur GitHub, il vous suffit d'appuyer sur le bouton vert "Use this template". Consultez [la documentation](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) pour plus d'infos ;
+## Schémas disponibles
 
-## Fichiers disponibles
+### Schéma racine
+- **`schema.json`** : Schéma principal regroupant tous les objets
 
-Ce dépôt contient un ensemble de fichiers utiles pour un dépôt d'un schéma [Table Schema](https://specs.frictionlessdata.io/table-schema/).
+### Schémas par classe d'objets
+- **`troncon-route.json`** : Tronçons de route en forêt (classe générique)
+- **`itineraire-bois-rond.json`** : Itinéraires autorisés pour le transport de bois ronds (hérite de troncon-route)
+- **`equipement.json`** : Équipements forestiers
+- **`point-contrainte.json`** : Points de contrainte de circulation
+- **`ressource-en-eau.json`** : Points d'eau et ressources hydriques
 
-- [`CHANGELOG.md`](CHANGELOG.md) contient la liste des changements entre les différentes versions de votre schéma ;
-- [`exemple-valide.csv`](exemple-valide.csv) est un fichier CSV d'exemple conforme par rapport au schéma décrit dans `schema.json`  ;
-- [`LICENSE.md`](LICENSE.md) est le fichier de licence du dépôt. Nous recommandons d'utiliser la [Licence Ouverte](https://www.etalab.gouv.fr/licence-ouverte-open-licence), cette licence est recommandée par l'administration française pour le partage de données et de documents ;
-- [`README.md`](README.md) est le fichier que vous lisez actuellement. À terme, il devra présenter votre schéma ;
-- [`requirements.txt`](requirements.txt) liste les dépendances Python nécessaires pour effectuer des tests en intégration continue sur votre dépôt ;
-- [`schema.json`](schema.json) est le schéma au format Table Schema.
+## Utilisation
 
-### Intégration continue
+### Validation des données
 
-Ce dépôt est configuré pour utiliser de l'intégration continue, si vous utilisez GitHub. À chaque commit, une suite de tests sera lancée via [GitHub Actions](https://github.com/features/actions) afin de vérifier :
+Les données peuvent être validées avec l'outil [Validata](https://validata.fr/) ou via le portail [NaviForest](https://naviforest.ign.fr/).
 
-- que votre schéma est valide à la spécification Table Schema ;
-- que vos fichiers d'exemples sont conformes au schéma.
+### Format de diffusion
 
-Si vous n'utilisez pas GitHub, vous pouvez lancer ces tests sur votre machine ou sur un autre service d'intégration continue comme Gitlab CI, Jenkins, Circle CI, Travis etc. Consultez la configuration utilisée dans [`.github/workflows/test.yml`](.github/workflows/test.yml).
+Les données peuvent être diffusées dans les formats suivants :
+- GeoJSON
+- GeoPackage (recommandé)
+- Shapefile
+- CSV (pour les données attributaires uniquement)
 
-Localement, voici la procédure à suivre pour installer l'environnement de test et lancer les tests :
+### Système de coordonnées
 
-```bash
-# Création d'un environnement virtuel en Python 3
-python3 -m venv venv
-source venv/bin/activate
-
-# Installation des dépendances
-pip install -r requirements.txt
-
-# Test de la validité du schéma
-frictionless validate --type schema schema.json
-
-# Test de la conformité des fichiers d'exemples
-frictionless validate --schema schema.json exemple-valide.csv
-```
-
-## Étapes à suivre
-
-Nous détaillons ci-dessous les étapes que nous vous conseillons de suivre après avoir créé votre dépôt Git, tout en utilisant les fichiers d'exemples.
-
-- [ ] Décrire votre schéma dans le fichier `schema.json` en respectant la spécification Table Schema. Le fichier d'exemple comprend des valeurs d'exemples pour toutes les métadonnées possibles. Notez que les champs d'exemple ne comprennent qu'une petite partie des types, formats et contraintes disponibles, référez-vous à [la documentation](https://specs.frictionlessdata.io/table-schema/#types-and-formats) pour toutes les valeurs possibles. Si certaines métadonnées ne sont pas nécessaires pour votre projet, vous pouvez les supprimer. Pour vérifier que votre schéma est conforme, vous pouvez utiliser l'outil [tableschema](https://pypi.org/project/tableschema/) en ligne de commande : `tableschema validate schema.json`
-- [ ] Modifier le fichier d'exemple CSV avec des données conforme à votre schéma. L'outil [frictionless](https://pypi.org/project/frictionless/) permet de vérifier que vos fichiers sont conformes au schéma en ligne de commande `frictionless validate --schema schema.json exemple-valide.csv`
-- [ ] Modifier le fichier [`CHANGELOG.md`](CHANGELOG.md) pour indiquer la publication initiale
-- [ ] Modifier le fichier [`README.md`](README.md), en supprimant tout son contenu tout d'abord. Au sein de plusieurs paragraphes, vous indiquerez le contexte, les modalités de production des données, le cadre juridique, la finalité, les cas d’usage etc. Consultez plusieurs schémas sur [schema.data.gouv.fr](https://schema.data.gouv.fr) pour découvrir quelles informations sont pertinentes à indiquer
-- [ ] Vérifier que la licence ouverte vous convient. Si vous devez utiliser une autre licence, modifiez le fichier [`LICENSE.md`](LICENSE.md) et indiquez la licence dans le fichier [`schema.json`](schema.json), dans la clé `licenses`
-
+**Obligatoire** : Lambert-93 (EPSG:2154) pour la France métropolitaine
 
 ## Documentation
 
-Pour vous aider dans la construction de votre dépôt, nous vous recommandons de vous référer à :
+- [Standard complet CNIG v2.0](https://cnig.gouv.fr/gt-dessertes-pour-les-transports-de-bois-a18535.html)
+- [Page du schéma sur schema.data.gouv.fr](https://schema.data.gouv.fr/cnigfr/schema-desserte-transport-bois/)
+- [Registre des mesures de qualité](https://data.geocatalogue.fr/ncl/mesuresQuaDoGeo)
 
-- [Le guide à destination des producteurs de schéma](https://guides.etalab.gouv.fr/producteurs-schemas/)
-- [La documentation de schema.data.gouv.fr](https://schema.data.gouv.fr)
-- [La spécification Table Schema](https://specs.frictionlessdata.io/table-schema/)
+## Exemples de données
+
+### Exemple de tronçon de route
+```json
+{
+  "identifiant": "TRONROUT0000002008897356",
+  "code_insee_commune_droite": "45234",
+  "sens_circulation": "Double sens",
+  "position_sol": "0",
+  "nature": "Route à 1 chaussée",
+  "reseau_bois": "Desserte forestière",
+  "reseau_dfci": "Voie DFCI",
+  "largeur_chaussee": 5.5,
+  "methode_acquisition": "GPS"
+}
+```
+
+### Exemple d'itinéraire bois rond
+```json
+{
+  "identifiant": "TRONROUT0000002008897357",
+  "sens_circulation": "Double sens",
+  "position_sol": "0",
+  "nature": "Route à 1 chaussée",
+  "reseau_bois": "Itinéraire Bois Rond",
+  "autorisation_itbr": "Sans restriction",
+  "ptra_max_5_essieux": "44",
+  "ptra_max_6_essieux": "57",
+  "interdiction_horaire": "Non concerné",
+  "itbr_temporaire": "Non",
+  "arrete_a_bord": "Oui",
+  "date_arrete": "2024-03-15",
+  "methode_acquisition": "GPS"
+}
+```
+
+### Exemple d'équipement
+```json
+{
+  "identifiant": "EQU_DESS0000002008897356",
+  "code_insee_commune": "45234",
+  "nature": "Place de dépôt",
+  "gestionnaire": "ONF",
+  "nom": "Place de dépôt des Chênes",
+  "longueur": 35.0,
+  "largeur": 12.0
+}
+```
+
+### Exemple de ressource en eau
+```json
+{
+  "identifiant": "RESS_EAU0000002008897356",
+  "code_insee_commune": "45234",
+  "numero_pei": "SDIS45-PI-00342",
+  "type_pei": "Point d'aspiration aménagé",
+  "type_pei_precis": "Bâche à eau",
+  "statut_pei": "Public",
+  "volume": 120,
+  "accessibilite_hbe": "Lourd",
+  "persistance": "Permanent",
+  "date_creation": "2023-06-15T10:00:00"
+}
+```
+
+## Producteurs de données
+
+Les producteurs de données concernés sont :
+- **DDT/DDTM** : Directions Départementales des Territoires
+- **SDIS** : Services Départementaux d'Incendie et de Secours
+- **ONF** : Office National des Forêts
+- **CNPF** : Centre National de la Propriété Forestière
+- **Collectivités territoriales**
+- **Transporteurs forestiers**
+
+## Contribution
+
+Les évolutions du standard sont pilotées par le [groupe de travail Dessertes en forêt du CNIG](https://cnig.gouv.fr/gt-dessertes-pour-les-transports-de-bois-a18535.html).
+
+Pour toute question ou suggestion :
+- [Formulaire de contact du CNIG](https://cnig.gouv.fr/spip.php?page=contact)
+- GitHub du projet : [cnigfr/schema-dessertes-transport-de-bois](https://github.com/cnigfr/schema-dessertes-transport-de-bois)
+
+## Licence
+
+Les schémas et la documentation sont publiés sous **Licence Ouverte v2.0 (Etalab)**.
+
+## Versions
+
+- **v2.0.0** (juin 2026) : Intégration de la thématique DFCI et mise à jour suite à la Loi Incendie
+- **v1.0.0** (mars 2019) : Version initiale "Dessertes pour le transport de bois"
+
+## Contact
+
+**Pilotage** : 
+- Isabelle BERTRAND (MASA)
+- Vincent MORILLON (FCBA)
+
+**Animation** : 
+- Marion LACROIX (IGN)
+```
