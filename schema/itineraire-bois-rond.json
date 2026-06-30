@@ -7,7 +7,7 @@
   "homepage": "https://cnig.gouv.fr/gt-dessertes-pour-les-transports-de-bois-a18535.html",
   "path": "https://schema.data.gouv.fr/cnigfr/schema-desserte-transport-bois/latest/itineraire-bois-rond.json",
   "created": "2026-06-18",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "fields": [
     {
       "name": "identifiant",
