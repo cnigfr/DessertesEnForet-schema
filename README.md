@@ -30,6 +30,8 @@ Il oeuvre sous mandat de la **Commission Standards du Conseil National de l'Info
 
 * Le répertoire [schema](/schema) contient le modèle du CNIG pour l'écriture du schéma du standard (travaux à venir, après l'écriture et la validation du standard).
 
+* Le répertoire [V2.0](/V2.0) contient les documents diffusés pour l'appel à commentaires (27/07/2026 au 11/09/2026).
+
 
 ## Liste de diffusion
 
