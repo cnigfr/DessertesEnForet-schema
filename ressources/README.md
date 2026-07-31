@@ -2,10 +2,9 @@
 
 On fait référence ici aux documents utiles au groupe de travail.
 
-* [Tableaux de travail](https://github.com/cnigfr/schema-dessertes-transport-de-bois/tree/master/documents/tableaux-de-travail)
-* [Standards préexistants](https://github.com/cnigfr/schema-dessertes-transport-de-bois/tree/master/documents/standards-preexistants)
-* [Autres documents](https://github.com/cnigfr/schema-dessertes-transport-de-bois/tree/master/documents/Autres-documents)
+## Mandat
 
+Contient le mandat du GT, validé par le groupe puis la Commission des standards du CNIG le 05/12/2024.
 
 ## Tableaux de travail
 
