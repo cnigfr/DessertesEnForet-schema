@@ -1,16 +1,5 @@
 {
   "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
-  "name": "itineraire-bois-rond",
-  "title": "Itinéraire Bois Rond",
-  "description": "Itinéraires autorisés par arrêté préfectoral pour le transport de bois ronds. Cette classe hérite de tous les attributs de la classe TronconDeRoute et y ajoute des attributs spécifiques aux ITBR.",
-  "countryCode": "FR",
-  "homepage": "https://cnig.gouv.fr/gt-dessertes-pour-les-transports-de-bois-a18535.html",
-  "path": "https://schema.data.gouv.fr/cnigfr/schema-desserte-transport-bois/latest/itineraire-bois-rond.json",
-  "created": "2026-06-18",
-  "version": "1.0.0",
-  "fields": [
- {
-  "$schema": "https://frictionlessdata.io/schemas/table-schema.json",
   "name": "troncon-de-route",
   "title": "Tronçon de route en forêt",
   "description": "Tronçons de route en forêt utilisés pour le transport de bois et/ou la DFCI, conformes au standard CNIG Dessertes en forêt v2.0",
@@ -511,7 +500,7 @@
       "title": "Charge à l'essieu max",
       "description": "Charge à l’essieu maximal autorisé. Exprimée en tonnes.",
       "type": "number",
-	  "example": 13
+	  "example": 13,
       "constraints": {
         "required": true,
 		"minimum": 6,

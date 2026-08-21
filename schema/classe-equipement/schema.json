@@ -98,7 +98,7 @@
       "title": "Largeur",
       "description": "Largeur maximale possible de l'équipement. Exprimée en mètres.",
       "type": "number",
-      "example": "3.5"
+      "example": "3.5",
 	  "constraints": {
         "minimum": 0
       }
