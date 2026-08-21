@@ -1,5 +1,5 @@
 identifiant,code_insee_commune,nature,gestionnaire,nature_troncon,nom,commentaire,contributeur,restriction_itbr,ptra,franchissement,hauteur_max,largeur_max,longueur_max,charge_essieu_max
 CONTDESS0000002008897356,27098,Pont,'Conseil Départemental de l''Eure',Route à 1 chaussée,Pont du Grand-Duc,Travaux prévus en 2027,Crige,Restriction,44,Franchie,5.0,3.5,25.0,13.0
-CONTDESS0000002008897357,36004,Pente forte > 10%,Office National des Forêts,Chemin,Pente des Bois de la Brenne,,ONF36,Non concerné,,,,,, 
-CONTDESS0000002008897358,33056,Impasse aménagée DFCI,SDIS 33,Route empierrée,Impasse des Pins Maritimes,'Équipé d''une aire de retournement DFCI',DDT33,Non concerné,,,,,, 
+CONTDESS0000002008897357,36004,Pente forte > 10%,Office National des Forêts,Chemin,Pente des Bois de la Brenne,,ONF36,Non concerné,,,,,,
+CONTDESS0000002008897358,33056,Impasse aménagée DFCI,SDIS 33,Route empierrée,Impasse des Pins Maritimes,'Équipé d''une aire de retournement DFCI',DDT33,Non concerné,,,,,,
 CONTDESS0000002008897359,55001,Ponceau ou buse,Commune de Bar-le-Duc,Chemin,Buse du Ruisseau des Forges,,DDT55,Interdiction,,Franchie,3.0,3.0,12.0,10
