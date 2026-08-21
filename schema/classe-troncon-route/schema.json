@@ -12,7 +12,7 @@
     {
       "name": "identifiant",
       "title": "Identifiant pour la diffusion",
-      "description": "Identifiant unique de l'objet, qui sert principalement à sa diffusion",
+      "description": "Identifiant unique de l'objet, qui sert principalement à sa diffusion.",
       "type": "string",
       "example": "TRONROUT0000002008897356",
       "constraints": {
@@ -22,79 +22,87 @@
     {
       "name": "code_insee_commune_droite",
       "title": "Code INSEE de la commune à droite",
-      "description": "Numéro INSEE de la commune à droite du tronçon par rapport au sens de numérisation",
+      "description": "Numéro INSEE de la commune à droite du tronçon par rapport au sens de numérisation.",
       "type": "string",
-      "pattern": "^[0-9AB]{5}$",
-      "example": "2A004"
+      "pattern": "^[0-9]{5}$",
+      "example": "36004"
     },
     {
       "name": "code_insee_commune_gauche",
       "title": "Code INSEE de la commune à gauche",
-      "description": "Numéro INSEE de la commune à gauche du tronçon par rapport au sens de numérisation",
+      "description": "Numéro INSEE de la commune à gauche du tronçon par rapport au sens de numérisation.",
       "type": "string",
-      "pattern": "^[0-9AB]{5}$",
+      "pattern": "^[0-9]{5}$",
       "example": "27098"
     },
     {
       "name": "numero_route",
       "title": "Numéro de la route",
-      "description": "Numéro de route à laquelle appartient ce tronçon",
+      "description": "Numéro de route à laquelle appartient ce tronçon.",
       "type": "string",
       "example": "D62"
     },
     {
       "name": "nom_ban_voie_droite",
       "title": "Nom BAN de la voie à droite",
-      "description": "Nom de la voie à droite, provenant de la BAN",
+      "description": "Nom de la voie à droite, provenant de la BAN (Base Nationale d'Adresses).",
       "type": "string",
       "example": "Route de Senlis"
     },
     {
       "name": "nom_ban_voie_gauche",
       "title": "Nom BAN de la voie à gauche",
-      "description": "Nom de la voie à gauche, provenant de la BAN",
+      "description": "Nom de la voie à gauche, provenant de la BAN (Base Nationale d'Adresses).",
       "type": "string",
       "example": "Route de Senlis"
     },
     {
       "name": "nom_usuel_voie_droite",
       "title": "Nom usuel de la voie à droite",
-      "description": "Nom alternatif connu de la voie à droite lorsque celui-ci ne provient pas de la BAN",
+      "description": "Nom alternatif connu de la voie à droite lorsque celui-ci ne provient pas de la BAN.",
       "type": "string",
       "example": "Route de Courbon"
     },
     {
       "name": "nom_usuel_voie_gauche",
       "title": "Nom usuel de la voie à gauche",
-      "description": "Nom alternatif connu de la voie à gauche lorsque celui-ci ne provient pas de la BAN",
+      "description": "Nom alternatif connu de la voie à gauche lorsque celui-ci ne provient pas de la BAN.",
       "type": "string",
       "example": "Montée des Bois"
     },
     {
       "name": "gestionnaire",
       "title": "Gestionnaire",
-      "description": "Le gestionnaire administratif de la route",
+      "description": "L’attribut définit le gestionnaire administratif d’une route.",
       "type": "string",
       "example": "Clermont-Ferrand"
     },
     {
       "name": "importance",
       "title": "Importance",
-      "description": "Hiérarchisation du réseau routier selon l'importance pour le trafic",
+      "description": "L’attribut matérialise une hiérarchisation du réseau routier, non pas sur un critère administratif, mais sur l'importance des tronçons de route pour le trafic routier. Cette classification permet de distinguer six catégories de liaisons, qui tissent un maillage toujours plus dense du territoire. Le graphe des éléments appartenant à un degré (autre que le plus bas) et aux niveaux supérieurs est connexe.",
       "type": "string",
-      "enum": ["1", "2", "3", "4", "5", "6"],
+      "enum": [
+		"1",
+		"2",
+		"3",
+		"4",
+		"5",
+		"6"
+	  ],
       "example": "5"
     },
     {
       "name": "sens_circulation",
       "title": "Sens de circulation",
-      "description": "Sens licite de circulation défini par rapport au sens de numérisation",
+      "description": "Sens licite de circulation sur le tronçon de route pour les véhicules légers, défini par rapport au sens de numérisation de tronçon (pour les sens uniques).",
       "type": "string",
       "enum": [
 		"Double sens",
 		"Sens direct",
 		"Sens inverse",
-		"Sans objet"],
+		"Sans objet"
+	  ],
       "example": "Double sens",
       "constraints": {
         "required": true
@@ -103,7 +111,7 @@
     {
       "name": "position_sol",
       "title": "Position par rapport au sol",
-      "description": "Niveau de l'objet par rapport à la surface du sol",
+      "description": "Donne le niveau de l’objet par rapport à la surface du sol (valeur négative pour un objet souterrain, 0 pour un objet au sol et positive pour un objet en sursol).",
       "type": "string",
       "enum": [
 		"-4",
@@ -115,7 +123,8 @@
 		"2",
 		"3",
 		"4",
-		"Gué ou radier"],
+		"Gué ou radier"
+	  ],
       "example": "0",
       "constraints": {
         "required": true
@@ -124,52 +133,68 @@
     {
       "name": "largeur_chaussee",
       "title": "Largeur de la chaussée",
-      "description": "Largeur de la chaussée en mètres, d'accotement à accotement",
+      "description": "Représente la largeur de la chaussée, d'accotement à accotement. Cette valeur, indicative, a été mesurée ou estimée sur le terrain ou sur orthophotos dans une partie des cas, et est calculée d’après le nombre de voies dans les cas restants. Exprimée en mètres.",
       "type": "number",
-      "example": "7.0"
+      "example": "7.0",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "ptra_max",
       "title": "Poids total roulant autorisé maximal",
-      "description": "PTRA maximal sur le tronçon en tonnes",
+      "description": "Exprime l’interdiction de circuler sur le tronçon aux véhicules dont le poids total roulant autorisé est supérieur au poids mentionné (en tonnes). Il s’agit d’une limitation physique ; aucune dérogation n’est possible. Exprimé en tonnes.",
       "type": "number",
-      "example": "25.00"
+      "example": "25.00",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "largeur_max_autorisee",
       "title": "Largeur maximale autorisée",
-      "description": "Largeur maximale autorisée en mètres pour la circulation",
+      "description": "Exprime l'interdiction de circuler sur le tronçon pour les véhicules dépassant la largeur indiquée. Exprimée en mètres.",
       "type": "number",
-      "example": "2"
+      "example": "2",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "hauteur_max_autorisee",
       "title": "Hauteur maximale autorisée",
-      "description": "Hauteur maximale autorisée en mètres pour la circulation",
+      "description": "Exprime l'interdiction de circuler sur le tronçon pour les véhicules dépassant la hauteur indiquée ; il s’agit de la hauteur d’une construction, d’un ouvrage (pont, tunnel), d’un dispositif (fil électrique ou téléphonique) ou d’un obstacle naturel. Elle peut correspondre à la présence d’un panneau d’interdiction ou à la mesure d’une hauteur d’ouvrage. Exprimée en mètres.",
       "type": "number",
-      "example": "2.70"
+      "example": "2.70",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "longueur_max_autorisee",
       "title": "Longueur maximale autorisée",
-      "description": "Longueur maximale autorisée en mètres pour la circulation",
+      "description": "Exprime l'interdiction de circuler sur le tronçon pour les véhicules dépassant la longueur indiquée. Exprimée en mètres.",
       "type": "number",
-      "example": "5.50"
+      "example": "5.50",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "praticabilite",
       "title": "Praticabilité",
-      "description": "Praticabilité du tronçon en fonction des conditions météorologiques",
+      "description": "Praticabilité du tronçon en fonction des conditions météorologiques.",
       "type": "string",
       "enum": [
 		"Tout temps",
-		"Temps sec"],
+		"Temps sec"
+	  ],
       "example": "Tout temps"
     },
     {
       "name": "methode_acquisition",
       "title": "Méthode d'acquisition planimétrique",
-      "description": "Méthode principale ayant permis d'acquérir la géométrie planimétrique",
+      "description": "Méthode principale ayant permis d'acquérir la géométrie planimétrique de l'objet.",
       "type": "string",
       "example": "Fichier numérique non métrique",
       "constraints": {
@@ -179,21 +204,21 @@
     {
       "name": "sources",
       "title": "Sources",
-      "description": "Sources attestant l'existence de l'objet",
+      "description": "Source attestant l'existence de l'objet, éventuellement dans le cadre d'un partenariat : organisme, administration, fichier de référence.",
       "type": "string",
       "example": "DDT55"
     },
     {
       "name": "date_modification",
       "title": "Date de modification",
-      "description": "Date et heure de dernière modification",
+      "description": "Date et heure à laquelle l'objet a été modifié pour la dernière fois dans la base de données de production.",
       "type": "datetime",
       "example": "2018-07-12T10:00:17"
     },
     {
       "name": "nature",
       "title": "Nature",
-      "description": "Type de revêtement et praticabilité du tronçon",
+      "description": "Attribut permettant de classer un tronçon de route suivant ses caractéristiques physiques (type de revêtement), sa largeur, son importance et/ou sa carrossabilité.",
       "type": "string",
       "enum": [
         "Bac ou liaison maritime",
@@ -215,17 +240,18 @@
     {
       "name": "reseau_bois",
       "title": "Réseau transport de bois",
-      "description": "Appartenance à un réseau de transport de bois",
+      "description": "Voie utilisée par les professionnels pour la gestion des forêts ou l’accès aux ressources forestières. ",
       "type": "string",
       "enum": [
 		"Desserte forestière",
-		"Itinéraire Bois Rond"],
+		"Itinéraire Bois Rond"
+	  ],
       "example": "Desserte forestière"
     },
     {
       "name": "accessibilite_bois",
       "title": "Accessibilité aux ensembles routiers de transport de bois",
-      "description": "Type de véhicule maximal pouvant emprunter la voie",
+      "description": "Accessibilité maximum de la voie selon le type de véhicule (caractérisation pour le transport de bois uniquement).",
       "type": "string",
       "enum": [
         "Semi-remorque",
@@ -240,7 +266,7 @@
     {
       "name": "reseau_dfci",
       "title": "Réseau DFCI",
-      "description": "Type de voie au sens de la DFCI",
+      "description": "Voie utilisée pour la DFCI.",
       "type": "string",
       "enum": [
         "Voie DFCI",
@@ -250,21 +276,40 @@
       ],
       "example": "Voie DFCI"
     },
+	{
+      "name": "servitude_dfci",
+      "title": "Servitude DFCI",
+      "description": "Servitude de passage et d'aménagement instituée pour la voie DFCI.",
+      "type": "string",
+      "enum": [
+        "Oui",
+        "Non"
+      ],
+      "example": "Oui"
+    },
+	{
+      "name": "beneficiaire_servitude_dfci",
+      "title": "Bénéficiaire de la servitude DFCI",
+      "description": "Bénéficiaire de la servitude DFCI.",
+      "type": "string",
+      "example": "État"
+    },
     {
       "name": "gabarit_dfci",
       "title": "Gabarit DFCI",
-      "description": "Type de véhicule DFCI pouvant emprunter le tronçon",
+      "description": "Tronçon permettant ou non le passage de véhicules de tailles différentes.",
       "type": "string",
       "enum": [
 		"Poids super lourd",
 		"Poids lourd",
-		"Véhicule léger"],
+		"Véhicule léger"
+	  ],
       "example": "Poids lourd"
     },
     {
       "name": "fosses_dfci",
-      "title": "Fossés DFCI",
-      "description": "Présence de fossés le long du tronçon",
+      "title": "Voie DFCI fossé",
+      "description": "Tronçon bordé ou non d'un fossé à sa droite et/ou à sa gauche. Droite et gauche sont par rapport au sens de numérisation de la voie.",
       "type": "string",
       "enum": [
         "Aucun",
@@ -277,26 +322,30 @@
     {
       "name": "vitesse_moyenne_dfci",
       "title": "Vitesse moyenne DFCI",
-      "description": "Vitesse moyenne du tronçon pour les acteurs DFCI en km/h",
+      "description": "Vitesse moyenne du tronçon pour les acteurs DFCI. Exprimée en km/h.",
       "type": "integer",
-      "example": "10"
+      "example": "10",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "categorie_dfci",
       "title": "Catégorie DFCI",
-      "description": "Classification des possibilités de circulation DFCI",
+      "description": "Classification des possibilités de circulation des groupes d’intervention feux de forêt sur le réseau de voirie utilisable pour la DFCI. La catégorie est attribuée par tronçon en fonction de la fréquence des zones de croisement, des aires de retournement et de la présence d’impasses.",
       "type": "string",
       "enum": [
 		"1re catégorie",
 		"2e catégorie",
 		"3e catégorie",
-		"Hors catégorie"],
+		"Hors catégorie"
+	  ],
       "example": "2e catégorie"
     },
     {
       "name": "acces_vehicule_leger",
       "title": "Accès véhicule léger",
-      "description": "Conditions d'accès des véhicules légers",
+      "description": "Précise les conditions d'accès des véhicules légers sur chaque tronçon.",
       "type": "string",
       "enum": [
         "À péage",
@@ -309,7 +358,7 @@
     {
       "name": "acces_pieton",
       "title": "Accès piéton",
-      "description": "Restrictions de circulation pour les piétons",
+      "description": "Indique les restrictions de circulation en vigueur pour les piétons (chemins, sentiers, bac piéton…).",
       "type": "string",
       "enum": [
         "À péage",
@@ -319,5 +368,6 @@
       ],
       "example": "Libre"
     }
-  ]
+  ],
+  "primaryKey": "identifiant"
 }

@@ -12,7 +12,7 @@
     {
       "name": "identifiant",
       "title": "Identifiant pour la diffusion",
-      "description": "Identifiant unique de l'objet",
+      "description": "Identifiant unique de l'objet, qui sert principalement à sa diffusion.",
       "type": "string",
       "example": "RESS_EAU0000002008897356",
       "constraints": {
@@ -22,9 +22,9 @@
     {
       "name": "code_insee_commune",
       "title": "Code INSEE de la commune",
-      "description": "Code INSEE de la commune où se situe la ressource en eau",
+      "description": "Code INSEE de la commune sur laquelle se situe le ponctuel.",
       "type": "string",
-      "pattern": "^[0-9AB]{5}$",
+      "pattern": "^[0-9]{5}$",
       "example": "27098",
       "constraints": {
         "required": true
@@ -33,7 +33,7 @@
     {
       "name": "numero_pei",
       "title": "Numéro ou référence du PEI",
-      "description": "Numéro ou référence du PEI validé en interservices",
+      "description": "Numéro ou référence du PEI validé en interservices. S'il existe, il fortement recommandé d'utiliser l'identifiant SDIS du PEI pour remplir ce champ.",
       "type": "string",
       "example": "SDIS69-PI-00342",
       "constraints": {
@@ -43,28 +43,28 @@
     {
       "name": "numero_gestionnaire",
       "title": "Numéro ou référence pour le gestionnaire",
-      "description": "Numéro ou référence interne du PEI pour le gestionnaire",
+      "description": "Numéro ou référence interne du PEI pour le gestionnaire.",
       "type": "string",
       "example": "83069_PI_0254"
     },
     {
       "name": "nom_gestionnaire",
       "title": "Nom du gestionnaire",
-      "description": "Nom du gestionnaire du PEI (information anonymisée)",
+      "description": "Nom du gestionnaire du PEI (information anonymisée).",
       "type": "string",
       "example": "Mairie de Saint-Martin-de-Crau"
     },
     {
       "name": "numero_terrain",
       "title": "Numéro ou référence terrain",
-      "description": "Numéro ou référence visible sur le terrain",
+      "description": "Numéro ou référence du point d'eau visible sur le terrain.",
       "type": "string",
       "example": "PI-13-0042"
     },
     {
       "name": "type_pei",
       "title": "Type de point d'eau",
-      "description": "Type de point d'eau incendie",
+      "description": "Type de point d’eau incendie. La typologie est issue du règlement national DECI et est évolutive si le règlement change.",
       "type": "string",
       "enum": [
         "Poteau d'incendie",
@@ -81,7 +81,7 @@
     {
       "name": "type_pei_precis",
       "title": "Précision sur le type de point d'eau",
-      "description": "Précision sur le type de point d'eau incendie",
+      "description": "Précision sur le type de point d'eau incendie.",
       "type": "string",
       "enum": [
         "Point d'eau naturel ou artificiel",
@@ -105,7 +105,7 @@
     {
       "name": "statut_pei",
       "title": "Statut du point d'eau",
-      "description": "Statut du point d'eau (public ou privé)",
+      "description": "Statut du point d’eau. La définition du statut est décrite dans le règlement national de la DECI.",
       "type": "string",
       "enum": [
 		"Privé",
@@ -116,35 +116,47 @@
     {
       "name": "pression_dynamique",
       "title": "Pression dynamique",
-      "description": "Pression dynamique en bars au débit nominal",
+      "description": "Pression dynamique au débit nominal. Exprimée en bars.",
       "type": "number",
-      "example": "1"
+      "example": "1",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "pression_statique",
       "title": "Pression statique",
-      "description": "Pression statique en bars",
+      "description": "Pression statique au débit nominal. Exprimée en bars.",
       "type": "number",
-      "example": "8.5"
+      "example": "8.5",
+	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "debit",
       "title": "Débit",
-      "description": "Débit mesuré en m3/h sous une pression de 1 bar",
+      "description": "Débit sous une pression de 1 bar. Exprimé en m3/h.",
       "type": "number",
-      "example": "60"
+      "example": "60",
+  	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "volume",
       "title": "Volume",
-      "description": "Capacité volumique utile en m3 (9999 si inépuisable)",
+      "description": "Capacité volumique utile de la source d’eau. Exprimée en m3. Si la source est inépuisable, mettre 9999.",
       "type": "integer",
-      "example": "9999"
+      "example": "9999",
+ 	  "constraints": {
+        "minimum": 0
+      }
     },
     {
       "name": "date_creation",
       "title": "Date de création",
-      "description": "Date de saisie dans la base de données",
+      "description": "Date et heure à laquelle l'objet a été saisi pour la première fois dans la base de données de production.",
       "type": "datetime",
       "example": "2018-07-12T10:00:17",
       "constraints": {
@@ -154,21 +166,21 @@
     {
       "name": "date_modification",
       "title": "Date de modification",
-      "description": "Date de dernière modification",
+      "description": "Date et heure à laquelle l'objet a été modifié pour la dernière fois dans la base de données de production.",
       "type": "datetime",
       "example": "2018-07-12T10:00:17"
     },
     {
       "name": "methode_acquisition",
       "title": "Méthode d'acquisition planimétrique",
-      "description": "Méthode principale d'acquisition de la géométrie",
+      "description": "Méthode principale ayant permis d'acquérir la géométrie planimétrique de l'objet.",
       "type": "string",
-      "example": "GPS"
+      "example": "Photogrammétrie"
     },
     {
       "name": "accessibilite_hbe",
       "title": "Accessibilité HBE",
-      "description": "Accessibilité par hélicoptère bombardier d'eau",
+      "description": "Définit l'accessibilité du point d’eau par un HBE (Hélicoptère bombardier d'eau).",
       "type": "string",
       "enum": [
 		"Léger",
@@ -188,5 +200,6 @@
 	  ],
       "example": "Permanent"
     }
-  ]
+  ],
+  "primaryKey": "identifiant"
 }
