@@ -1,0 +1,61 @@
+{
+    "name": "datapackage-dgv",
+    "title": "Modèle data gouv",
+    "description": "Description",
+    "id": "datapackage-dgv",
+    "resources": [
+        {
+            "name": "classe-dessertes-en-foret",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-dessertes-en-foret/schema.json"
+		},
+        {
+            "name": "classe-equipement",
+            "path": "schema/classe-equipement/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-equipement/schema.json"
+        },
+		{
+            "name": "classe-itineraire-bois-rond",
+            "path": "schema/classe-itineraire-bois-rond/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-itineraire-bois-rond/schema.json"
+        },
+		{
+            "name": "classe-point-contrainte",
+            "path": "schema/classe-point-contrainte/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-point-contrainte/schema.json"
+        },
+		{
+            "name": "classe-ressource-en-eau",
+            "path": "schema/classe-ressource-en-eau/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-ressource-en-eau/schema.json"
+        },
+		{
+            "name": "classe-troncon-route",
+            "path": "schema/classe-troncon-route/exemple-valide.csv",
+            "profile": "tabular-data-resource",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": "schema/classe-troncon-route/schema.json"
+        }
+    ]
+}
