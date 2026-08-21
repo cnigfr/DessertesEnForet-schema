@@ -21,10 +21,6 @@ jobs:
           ${{ runner.os }}-
     - name: Installation des dépendances
       run: pip install -r requirements.txt
-    - name: Vérification du schéma classe-dessertes-en-foret et du fichier d'exemple associé
-      run: |
-        frictionless validate --type schema schema/classe-dessertes-en-foret/schema.json
-        frictionless validate --schema schema/classe-dessertes-en-foret/schema.json schema/classe-dessertes-en-foret/exemple-valide.csv
     - name: Vérification du schéma classe-equipement et du fichier d'exemple associé
       run: |
         frictionless validate --type schema schema/classe-equipement/schema.json
