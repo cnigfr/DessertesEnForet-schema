@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: "3.10"
     - name: Cache pip
-      uses: actions/cache@v1
+      uses: actions/cache@v5
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -23,7 +23,27 @@ jobs:
           ${{ runner.os }}-
     - name: Installation des dépendances
       run: pip install -r requirements.txt
-    - name: Vérification du schéma et des fichiers d'exemples
+    - name: Vérification du schéma classe-dessertes-en-foret et du fichier d'exemple associé
       run: |
-        frictionless validate --type schema schema.json
-        frictionless validate --schema schema.json exemple-valide.csv
+        frictionless validate --type schema schema/classe-dessertes-en-foret/schema.json
+        frictionless validate --schema schema/classe-dessertes-en-foret/schema.json schema/classe-dessertes-en-foret/exemple-valide.csv
+    - name: Vérification du schéma classe-equipement et du fichier d'exemple associé
+      run: |
+        frictionless validate --type schema schema/classe-equipement/schema.json
+        frictionless validate --schema schema/classe-equipement/schema.json schema/classe-equipement/exemple-valide.csv
+    - name: Vérification du schéma classe-itineraire-bois-rond et du fichier d'exemple associé
+      run: |
+        frictionless validate --type schema schema/classe-itineraire-bois-rond /schema.json
+        frictionless validate --schema schema/classe-ditineraire-bois-rond /schema.json schema/classe-itineraire-bois-rond /exemple-valide.csv
+    - name: Vérification du schéma classe-point-contrainte et du fichier d'exemple associé
+      run: |
+        frictionless validate --type schema schema/classe-point-contrainte/schema.json
+        frictionless validate --schema schema/classe-point-contrainte/schema.json schema/classe-point-contrainte/exemple-valide.csv
+    - name: Vérification du schéma classe-ressource-en-eau et du fichier d'exemple associé
+      run: |
+        frictionless validate --type schema schema/classe-ressource-en-eau/schema.json
+        frictionless validate --schema schema/classe-ressource-en-eau/schema.json schema/classe-ressource-en-eau/exemple-valide.csv
+    - name: Vérification du schéma classe-troncon-route et du fichier d'exemple associé
+      run: |
+        frictionless validate --type schema schema/classe-troncon-route/schema.json
+        frictionless validate --schema schema/classe-troncon-route/schema.json schema/classe-troncon-route/exemple-valide.csv
