@@ -28,7 +28,7 @@ jobs:
     - name: Vérification du schéma classe-itineraire-bois-rond et du fichier d'exemple associé
       run: |
         frictionless validate --type schema schema/classe-itineraire-bois-rond/schema.json
-        frictionless validate --schema schema/classe-ditineraire-bois-rond/schema.json schema/classe-itineraire-bois-rond /exemple-valide.csv
+        frictionless validate --schema schema/classe-ditineraire-bois-rond/schema.json schema/classe-itineraire-bois-rond/exemple-valide.csv
     - name: Vérification du schéma classe-point-contrainte et du fichier d'exemple associé
       run: |
         frictionless validate --type schema schema/classe-point-contrainte/schema.json
