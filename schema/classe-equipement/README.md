@@ -8,4 +8,4 @@
 - est diffusable en Open Data ;
 - a été validé par les autorités compétentes comme ayant un intérêt opérationnel stratégique pour la DFCI ou opérationnel pour le transport de bois.
 
-**Modélisation géométrique** : Ponctuel. Il peut être géométriquement à proximité d’un linéaire [Tronçon de route](./classe-troncon-de-route/README.md).
+**Modélisation géométrique** : Ponctuel. Il peut être géométriquement à proximité d’un linéaire [Tronçon de route](../classe-troncon-de-route/README.md).
