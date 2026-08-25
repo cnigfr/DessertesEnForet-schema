@@ -56,34 +56,93 @@ Les données peuvent être diffusées dans les formats suivants :
 ### Exemple de tronçon de route
 ```json
 {
-  "identifiant": "TRONROUT0000002008897356",
-  "code_insee_commune_droite": "45234",
-  "sens_circulation": "Double sens",
-  "position_sol": "0",
-  "nature": "Route à 1 chaussée",
-  "reseau_bois": "Desserte forestière",
-  "reseau_dfci": "Voie DFCI",
-  "largeur_chaussee": 5.5,
-  "methode_acquisition": "GPS"
+	"identifiant": "TRONROUT0000002008897356",
+	"code_insee_commune_droite": "60300",
+	"code_insee_commune_gauche": "63000",
+	"numero_route": "D330",
+	"nom_ban_voie_droite": "Avenue de Creil",
+	"nom_ban_voie_gauche": "Avenue de Creil",
+	"nom_usuel_voie_droite": "",
+	"nom_usuel_voie_gauche": "",
+	"gestionnaire": "Conseil départemental de l'Oise",
+	"importance": "5",
+	"sens_circulation": "Double",
+	"position_sol": "0",
+	"largeur_chaussee": 6.0,
+	"ptra_max": 44,
+	"largeur_max_autorisee": 3.5,
+	"hauteur_max_autorisee": 4.5,
+	"longueur_max_autorisee": 18.0,
+	"praticabilite": "Tout temps",
+	"methode_acquisition": "Fichier numérique non métrique",
+	"sources": "DDT60",
+	"date_modification": "2023-05-10T08:30:00",
+	"nature": "Route à deux chaussées",
+	"reseau_bois": "Desserte forestière",
+	"accessibilite_bois": "Grumier sans timon",
+	"reseau_dfci": "Voie DFCI",
+	"servitude_dfci": "Oui",
+	"beneficiaire_servitude_dfci": "État",
+	"gabarit_dfci": "Poids lourd",
+	"fosses_dfci": "Fossés à droite et à gauche",
+	"vitesse_moyenne_dfci": 40,
+	"categorie_dfci": "1re catégorie",
+	"acces_vehicule_leger": "Libre",
+	"acces_pieton": "Libre"
 }
 ```
 
 ### Exemple d'itinéraire bois rond
 ```json
 {
-  "identifiant": "TRONROUT0000002008897357",
-  "sens_circulation": "Double sens",
-  "position_sol": "0",
-  "nature": "Route à 1 chaussée",
-  "reseau_bois": "Itinéraire Bois Rond",
-  "autorisation_itbr": "Sans restriction",
-  "ptra_max_5_essieux": "44",
-  "ptra_max_6_essieux": "57",
-  "interdiction_horaire": "Non concerné",
-  "itbr_temporaire": "Non",
-  "arrete_a_bord": "Oui",
-  "date_arrete": "2024-03-15",
-  "methode_acquisition": "GPS"
+	"identifiant": "TRONROUT0000002008897356",
+	"code_insee_commune_droite": "60300",
+	"code_insee_commune_gauche": "63000",
+	"numero_route": "D330",
+	"nom_ban_voie_droite": "Avenue de Creil",
+	"nom_ban_voie_gauche": "Avenue de Creil",
+	"nom_usuel_voie_droite": "",
+	"nom_usuel_voie_gauche": "",
+	"gestionnaire": "Conseil départemental de l'Oise",
+	"importance": "5",
+	"sens_circulation": "Double",
+	"position_sol": "0",
+	"largeur_chaussee": 6.0,
+	"ptra_max": 44,
+	"largeur_max_autorisee": 3.5,
+	"hauteur_max_autorisee": 4.5,
+	"longueur_max_autorisee": 18.0,
+	"praticabilite": "Tout temps",
+	"methode_acquisition": "Fichier numérique non métrique",
+	"sources": "DDT60",
+	"date_modification": "2023-05-10T08:30:00",
+	"nature": "Route à deux chaussées",
+	"reseau_bois": "Desserte forestière",
+	"accessibilite_bois": "Grumier sans timon",
+	"reseau_dfci": "Voie DFCI",
+	"servitude_dfci": "Oui",
+	"beneficiaire_servitude_dfci": "État",
+	"gabarit_dfci": "Poids lourd",
+	"fosses_dfci": "Fossés à droite et à gauche",
+	"vitesse_moyenne_dfci": 40,
+	"categorie_dfci": "1re catégorie",
+	"acces_vehicule_leger": "Libre",
+	"acces_pieton": "Libre"
+	"autorisation_itbr": "Transit",
+	"raccordement_itbr": "10 km max",
+	"raccordement_au_plus_court": "Oui",
+	"autorisation_raccordement_itbr": "Selon configuration", 
+	"configuration_raccordement_itbr": "Tonnage > 48 T à 6 essieux minimum",
+	"equipement_raccordement_itbr": "6 essieux max",
+	"ptra_max_5_essieux": 44,
+	"ptra_max_6_essieux": 48,
+	"charge_essieu_max": 12,
+	"interdiction_horaire": "Plage horaire",
+	"itbr_temporaire": "Non"
+	"debut_periode_itbr": "",
+	"fin_periode_itbr": "",
+	"arrete_a_bord": "Non",
+	"date_arrete": "2024-05-20"
 }
 ```
 
@@ -93,26 +152,58 @@ Les données peuvent être diffusées dans les formats suivants :
   "identifiant": "EQU_DESS0000002008897356",
   "code_insee_commune": "45234",
   "nature": "Place de dépôt",
-  "gestionnaire": "ONF",
-  "nom": "Place de dépôt des Chênes",
+  "gestionnaire": "Office National des Forêts",
+  "nature_troncon": "Route empierrée",
+  "nom": "Place de dépôt du Grand Duc",
+  "commentaire: "Accès difficile en période hivernale",
+  "contributeur": "Crige",
   "longueur": 35.0,
   "largeur": 12.0
+}
+```
+
+### Exemple de contrainte
+```json
+{
+	"identifiant": "CONTDESS0000002008897356",
+	"code_insee_commune": "27098",
+	"nature": "Pont",
+	"gestionnaire": "Conseil Départemental de l'Eure",
+	"nature_troncon": "Route à 1 chaussée",
+	"nom": "Pont du Grand-Duc",
+	"commentaire": "Travaux prévus en 2027",
+	"contributeur": "Crige",
+	"restriction_itbr": "Restriction",
+	"ptra": 44,
+	"franchissement": "Franchie",
+	"hauteur_max": 5.0,
+	"largeur_max": 3.5,
+	"longueur_max": 25.0,
+	"charge_essieu_max": 13.0
 }
 ```
 
 ### Exemple de ressource en eau
 ```json
 {
-  "identifiant": "RESS_EAU0000002008897356",
-  "code_insee_commune": "45234",
-  "numero_pei": "SDIS45-PI-00342",
-  "type_pei": "Point d'aspiration aménagé",
-  "type_pei_precis": "Bâche à eau",
-  "statut_pei": "Public",
-  "volume": 120,
-  "accessibilite_hbe": "Lourd",
-  "persistance": "Permanent",
-  "date_creation": "2023-06-15T10:00:00"
+	"identifiant": "RESS_EAU0000002008897356",
+	"code_insee_commune": "27098",
+	"numero_pei": "SDIS27-PI-00342",
+	"numero_gestionnaire": "83027_PI_0254",
+	"nom_gestionnaire": "Mairie de Bouchevilliers",
+	"numero_terrain": "PI-27-0042",
+	"type_pei": "Poteau d'incendie",
+	"type_pei_precis": "",
+	"statut_pei": "Public",
+	"pression_dynamique": 1.0,
+	"pression_statique": 8.5,
+	"debit": 60,
+	"volume": 9999,
+	"date_creation": "2018-07-12T10:00:17",
+	"date_modification": "2023-03-01T09:00:00",
+	"methode_acquisition": "Photogrammétrie",
+	"accessibilite_hbe": "Non accessible",
+	"persistance": "Permanent"
 }
 ```
 
