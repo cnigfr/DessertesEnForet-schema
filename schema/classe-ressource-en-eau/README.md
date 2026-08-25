@@ -15,4 +15,4 @@ Chaque objet Ressource en eau :
 - a été validé ou est en voie de validation par les autorités compétentes comme ayant un intérêt opérationnel pour la DFCI ; 
 - a été validé par les autorités compétentes comme étant accessible de façon terrestre ou aérienne.
 
-**Modélisation géométrique** : Ponctuel. Il peut être géométriquement à proximité d’un linéaire [Tronçon de route](../classe-troncon-de-route/README.md). Si la ressource en eau concerne une surface ou un linéaire, le ponctuel représenté est le point d’aspiration recommandé par l’autorité compétente.
+**Modélisation géométrique** : Ponctuel. Il peut être géométriquement à proximité d’un linéaire [Tronçon de route](../classe-troncon-route/README.md). Si la ressource en eau concerne une surface ou un linéaire, le ponctuel représenté est le point d’aspiration recommandé par l’autorité compétente.
