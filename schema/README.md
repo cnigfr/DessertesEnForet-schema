@@ -155,7 +155,7 @@ Les données peuvent être diffusées dans les formats suivants :
   "gestionnaire": "Office National des Forêts",
   "nature_troncon": "Route empierrée",
   "nom": "Place de dépôt du Grand Duc",
-  "commentaire: "Accès difficile en période hivernale",
+  "commentaire": "Accès difficile en période hivernale",
   "contributeur": "Crige",
   "longueur": 35.0,
   "largeur": 12.0
