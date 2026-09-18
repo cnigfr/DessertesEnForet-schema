@@ -9,7 +9,7 @@
 - tout autre point d’eau conforme aux spécifications fixées pour chaque département. »
 
 Chaque objet Ressource en eau : 
-- ne relève pas de données sensibles ;  
+- ne relève pas de données sensibles ou stratégiques ;  
 - est anonymisé ;
 - est diffusable en Open Data ; 
 - a été validé ou est en voie de validation par les autorités compétentes comme ayant un intérêt opérationnel pour la DFCI ; 

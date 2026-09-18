@@ -30,16 +30,16 @@
     {
       "name": "nature",
       "title": "Nature",
-      "description": "Nature du point de contrainte.",
+      "description": "Caractérisation du type de point de contrainte.",
       "type": "string",
       "enum": [
-        "Dévers > 3%",
+        "Dévers >3%",
         "Impasse simple",
         "Impasse aménagée DFCI",
         "Lacet",
         "Obstacle",
         "Passage à niveau",
-        "Pente forte > 10%",
+        "Pente forte >10%",
         "Ponceau ou buse",
         "Pont",
         "Tunnel"
@@ -58,7 +58,7 @@
     },
     {
       "name": "nature_troncon",
-      "title": "Nature du tronçon de route",
+      "title": "Nature du revêtement du point de contrainte",
       "description": "Type de revêtement du point de contrainte ou à proximité du point de contrainte.",
       "type": "string",
       "enum": [
@@ -161,6 +161,23 @@
 	  "constraints": {
         "minimum": 0
       }
+    },
+	{
+      "name": "date_creation",
+      "title": "Date de création",
+      "description": "Date et heure à laquelle l'objet a été saisi pour la première fois dans la base de données de production.",
+      "type": "datetime",
+      "example": "2018-07-12T10:00:17"
+	  "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "date_modification",
+      "title": "Date de modification",
+      "description": "Date et heure à laquelle l'objet a été modifié pour la dernière fois dans la base de données de production.",
+      "type": "datetime",
+      "example": "2018-07-12T12:01:25"
     }
   ],
   "primaryKey": "identifiant"

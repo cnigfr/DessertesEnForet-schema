@@ -48,7 +48,7 @@
       "example": "83069_PI_0254"
     },
     {
-      "name": "nom_gestionnaire",
+      "name": "gestionnaire",
       "title": "Nom du gestionnaire",
       "description": "Nom du gestionnaire du PEI (information anonymisée).",
       "type": "string",
@@ -81,7 +81,7 @@
     {
       "name": "type_pei_precis",
       "title": "Précision sur le type de point d'eau",
-      "description": "Précision sur le type de point d'eau incendie.",
+      "description": "Précision sur le type de point d'eau incendie, en particulier si le type de point d’eau est « Autre ».",
       "type": "string",
       "enum": [
         "Point d'eau naturel ou artificiel",
@@ -90,7 +90,7 @@
         "Autre réseau d'eau sous pression",
         "Citerne enterrée",
         "Citerne aérienne",
-        "Bâche à eau",
+        "Bâche à eau (citerne souple)",
         "Plan d'eau",
         "Piscine",
         "Puits",
@@ -98,6 +98,7 @@
         "Forage DFCI",
         "Forage agricole",
         "Forage industriel",
+		"Plateforme pour piscine",
         "Autre dispositif"
       ],
       "example": "Bâche à eau"
@@ -109,7 +110,8 @@
       "type": "string",
       "enum": [
 		"Privé",
-		"Public"
+		"Public",
+		"Privé conventionné"
 	  ],
       "example": "Public"
     },
@@ -188,6 +190,43 @@
 		"Non accessible"
 	  ],
       "example": "Lourd"
+    },
+	{
+      "name": "accessibilite_terrestre",
+      "title": "Accessibilité terrestre",
+      "description": "Définit l'accessibilité maximum de la voie selon le type de véhicule.",
+      "type": "string",
+      "enum": [
+		"Motopompe flottante (MPF)",
+		"Motopompe remorquable (MPR)",
+		"Motopompe remorquable immergée (MPRI)",
+		"Camion-citerne feux de forêt (CCF) ",
+		"Fourgon pompe-tonne (FPT)",
+		"Gros porteur (GP)"
+	  ],
+      "example": "Gros porteur (GP)"
+    },
+	    {
+      "name": "possibilite_noria",
+      "title": "Possibilité de noria",
+      "description": "Désigne la possibilité ou non pour les engins de secours de faire une noria.",
+      "type": "string",
+      "enum": [
+		"Oui",
+		"Non",
+	  ],
+      "example": "Non"
+    },
+	    {
+      "name": "forages_dfci",
+      "title": "Mode d’utilisation des forages DFCI",
+      "description": "Type de motopompe nécessaire à l'exploitation d'un forage utilisé comme point d'eau DFCI.",
+      "type": "string",
+      "enum": [
+		"Motopompe remorquable (MPR)",
+		"Motopompe remorquable immergée (MPRI)"
+	  ],
+      "example": "Motopompe remorquable (MPR)"
     },
     {
       "name": "persistance",

@@ -133,17 +133,51 @@
     {
       "name": "largeur_chaussee",
       "title": "Largeur de la chaussée",
-      "description": "Représente la largeur de la chaussée, d'accotement à accotement. Cette valeur, indicative, a été mesurée ou estimée sur le terrain ou sur orthophotos dans une partie des cas, et est calculée d’après le nombre de voies dans les cas restants. Exprimée en mètres.",
+      "description": "Représente la largeur de la chaussée, d'accotement à accotement. Cette valeur, indicative, a été mesurée ou estimée sur le terrain ou sur orthophotos dans une partie des cas, et est calculée d’après le nombre de voies dans les cas restants. La qualification s'effectue à l'échelle du tronçon. Exprimée en mètres.",
       "type": "number",
       "example": "7.0",
 	  "constraints": {
         "minimum": 0
       }
     },
+	{
+      "name": "sources",
+      "title": "Sources",
+      "description": "Source attestant l'existence de l'objet, éventuellement dans le cadre d'un partenariat : organisme, administration, fichier de référence.",
+      "type": "string",
+      "example": "DDT55"
+    },
+    {
+      "name": "methode_acquisition",
+      "title": "Méthode d'acquisition planimétrique",
+      "description": "Méthode principale ayant permis d'acquérir la géométrie planimétrique de l'objet.",
+      "type": "string",
+      "example": "Fichier numérique non métrique",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "date_creation",
+      "title": "Date de création",
+      "description": "Date et heure à laquelle l'objet a été saisi pour la première fois dans la base de données de production.",
+      "type": "datetime",
+      "example": "2018-07-12T10:00:17"
+	  "constraints": {
+        "required": true
+      }
+    },	
+    {
+      "name": "date_modification",
+      "title": "Date de modification",
+      "description": "Date et heure à laquelle l'objet a été modifié pour la dernière fois dans la base de données de production.",
+      "type": "datetime",
+      "example": "2018-07-12T12:01:25"
+    },	
     {
       "name": "ptra_max",
       "title": "Poids total roulant autorisé maximal",
-      "description": "Exprime l’interdiction de circuler sur le tronçon aux véhicules dont le poids total roulant autorisé est supérieur au poids mentionné (en tonnes). Il s’agit d’une limitation physique ; aucune dérogation n’est possible. Exprimé en tonnes.",
+      "description": "Exprime l’interdiction de circuler sur le tronçon aux véhicules dont le poids total roulant autorisé est supérieur au poids mentionné (en tonnes). Il s’agit d’une limitation physique ; aucune dérogation n’est possible. La qualification s’effectue à l’échelle du tronçon. Exprimé en tonnes.",
       "type": "number",
       "example": "25.00",
 	  "constraints": {
@@ -153,7 +187,7 @@
     {
       "name": "largeur_max_autorisee",
       "title": "Largeur maximale autorisée",
-      "description": "Exprime l'interdiction de circuler sur le tronçon pour les véhicules dépassant la largeur indiquée. Exprimée en mètres.",
+      "description": "Exprime l'interdiction de circuler sur le tronçon pour les véhicules dépassant la largeur indiquée. La qualification s’effectue à l’échelle du tronçon. Exprimée en mètres.",
       "type": "number",
       "example": "2",
 	  "constraints": {
@@ -192,30 +226,6 @@
       "example": "Tout temps"
     },
     {
-      "name": "methode_acquisition",
-      "title": "Méthode d'acquisition planimétrique",
-      "description": "Méthode principale ayant permis d'acquérir la géométrie planimétrique de l'objet.",
-      "type": "string",
-      "example": "Fichier numérique non métrique",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "sources",
-      "title": "Sources",
-      "description": "Source attestant l'existence de l'objet, éventuellement dans le cadre d'un partenariat : organisme, administration, fichier de référence.",
-      "type": "string",
-      "example": "DDT55"
-    },
-    {
-      "name": "date_modification",
-      "title": "Date de modification",
-      "description": "Date et heure à laquelle l'objet a été modifié pour la dernière fois dans la base de données de production.",
-      "type": "datetime",
-      "example": "2018-07-12T10:00:17"
-    },
-    {
       "name": "nature",
       "title": "Nature",
       "description": "Attribut permettant de classer un tronçon de route suivant ses caractéristiques physiques (type de revêtement), sa largeur, son importance et/ou sa carrossabilité.",
@@ -250,16 +260,16 @@
     },
     {
       "name": "accessibilite_bois",
-      "title": "Accessibilité aux ensembles routiers de transport de bois",
-      "description": "Accessibilité maximum de la voie selon le type de véhicule (caractérisation pour le transport de bois uniquement).",
+      "title": "Accessibilité aux véhicules pour la mobilisation du bois",
+      "description": "Accessibilité maximum de la voie selon le type de véhicule (caractérisation pour le transport en lien avec la mobilisation du bois uniquement).",
       "type": "string",
       "enum": [
-        "Semi-remorque",
-        "Camion remorque",
         "Grumier sans timon",
         "Grumier avec timon",
-        "Semi-remorque surbaissée",
-        "Semi-remorque à fond mouvant"
+		"Camion remorque",
+		"Semi-remorque",
+        "Semi-remorque à fond mouvant",
+		"Semi-remorque surbaissée"
       ],
       "example": "Semi-remorque"
     },
@@ -335,9 +345,9 @@
       "description": "Classification des possibilités de circulation des groupes d’intervention feux de forêt sur le réseau de voirie utilisable pour la DFCI. La catégorie est attribuée par tronçon en fonction de la fréquence des zones de croisement, des aires de retournement et de la présence d’impasses.",
       "type": "string",
       "enum": [
-		"1re catégorie",
-		"2e catégorie",
-		"3e catégorie",
+		"1ère catégorie",
+		"2ème catégorie",
+		"3ème catégorie",
 		"Hors catégorie"
 	  ],
       "example": "2e catégorie"

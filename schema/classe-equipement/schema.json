@@ -30,7 +30,7 @@
     {
       "name": "nature",
       "title": "Nature",
-      "description": "Nature de l'équipement",
+      "description": "Caractérisation du type d’équipement.",
       "type": "string",
       "enum": [
         "Aire de croisement",
@@ -52,7 +52,7 @@
     },
     {
       "name": "nature_troncon",
-      "title": "Nature du tronçon de route",
+      "title": "Nature du revêtement de l'équipement",
       "description": "Type de revêtement de l'équipement ou à proximité de l'équipement.",
       "type": "string",
       "enum": [
@@ -83,6 +83,16 @@
       "type": "string",
       "example": "Crige"
     },
+	{
+      "name": "largeur",
+      "title": "Largeur",
+      "description": "Largeur maximale possible de l'équipement. Exprimée en mètres.",
+      "type": "number",
+      "example": "3.5",
+	  "constraints": {
+        "minimum": 0
+      }
+    },
     {
       "name": "longueur",
       "title": "Longueur",
@@ -93,15 +103,22 @@
         "minimum": 0
       }
     },
-    {
-      "name": "largeur",
-      "title": "Largeur",
-      "description": "Largeur maximale possible de l'équipement. Exprimée en mètres.",
-      "type": "number",
-      "example": "3.5",
+	{
+      "name": "date_creation",
+      "title": "Date de création",
+      "description": "Date et heure à laquelle l'objet a été saisi pour la première fois dans la base de données de production.",
+      "type": "datetime",
+      "example": "2018-07-12T10:00:17"
 	  "constraints": {
-        "minimum": 0
+        "required": true
       }
+    },
+    {
+      "name": "date_modification",
+      "title": "Date de modification",
+      "description": "Date et heure à laquelle l'objet a été modifié pour la dernière fois dans la base de données de production.",
+      "type": "datetime",
+      "example": "2018-07-12T12:01:25"
     }
   ],
   "primaryKey": "identifiant"
