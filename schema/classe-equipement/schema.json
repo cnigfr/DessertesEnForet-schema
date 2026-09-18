@@ -108,7 +108,7 @@
       "title": "Date de création",
       "description": "Date et heure à laquelle l'objet a été saisi pour la première fois dans la base de données de production.",
       "type": "datetime",
-      "example": "2018-07-12T10:00:17"
+      "example": "2018-07-12T10:00:17",
 	  "constraints": {
         "required": true
       }
