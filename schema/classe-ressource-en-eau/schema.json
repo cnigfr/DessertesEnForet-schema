@@ -213,7 +213,7 @@
       "type": "string",
       "enum": [
 		"Oui",
-		"Non",
+		"Non"
 	  ],
       "example": "Non"
     },
