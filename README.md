@@ -51,6 +51,4 @@ Vous pouvez également utiliser les outils proposés par github :
 
 * Poser des questions, demandes d'évolutions via les [Issues](https://github.com/cnigfr/schema-dessertes-transport-de-bois/issues) ou via le [CNIG](https://cnig.gouv.fr/spip.php?page=contact).
 
-* 
-
 
