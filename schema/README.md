@@ -1,6 +1,6 @@
 # Schéma de données Dessertes en forêt : Transport de bois et DFCI
 
-Ce dépôt contient les schémas de données relatifs aux dessertes forestières pour le transport de bois et la Défense des Forêts Contre l'Incendie (DFCI), conformes au standard CNIG v2.0 publié en juin 2026.
+Ce dépôt contient les schémas de données relatifs aux dessertes forestières pour le transport de bois et la Défense des Forêts Contre l'Incendie (DFCI), conformes au standard CNIG v2.0 publié en septembre 2026.
 
 ## Contexte
 
